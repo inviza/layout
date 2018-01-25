@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background {
+    Width 100%;
+    background-image:url("../img/page-bg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.whapper {width: 480px;
+    background: white;
+    margin: auto;
+    padding: 60px 40px;
+    margin: 200px auto 120px; 
+}
+ .main-font{
+    color:  #263555;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 25px;
+}
+.middle-font {
+    font-family: Arial;
+    color:  #263555;
+    margin: 30px 0 25px 0;
+    font-size: 14px;
+    line-height: 19px;
+}
+.second article {
+    margin: 55px 0 0 0;
+}
+.small-font {
+    font-family: Arial;
+    color:  #263555;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 16px 0;
+}
+.plain-font{
+    font-size: 12px;
+    line-height: 17px;
+    margin: 0 0 30px 0;
+}
+.third-article {
+    margin: 110px 0 30px 0;
+}
+#gg {
+    margin: 0 0 24px 0;
+}
+#rr {
+    margin: 0 0 40px 0;
+}
+.forth-article {
+    text-align: center;
+}
+.last-text1, .last-text2 {
+    width: 180px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    line-height: 22px;
+}
+.last-text2 {
+    width: 180px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+    
+    
