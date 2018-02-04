@@ -4,17 +4,20 @@
     box-sizing: border-box;
 }
 .background {
-    Width 100%;
+    width: 100%;
     background-image:url("../img/page-bg.jpg");
     background-size:cover;
     background-repeat: no-repeat;
 }
-.whapper {width: 480px;
+.wrapper {width: 480px;
     background: white;
     margin: auto;
     padding: 60px 40px;
     margin: 200px auto 120px; 
 }
+li {
+    list-style-type: none; /* увидел на форуме как убрать */
+   }
  .main-font{
     color:  #263555;
     text-transform: uppercase;
@@ -57,16 +60,17 @@
     text-align: center;
 }
 .last-text1, .last-text2 {
-    width: 180px;
+    width: 200px;
     display: inline-block;
     vertical-align: top;
     text-align: left;
     line-height: 22px;
 }
 .last-text2 {
-    width: 180px;
-    display: inline-block;
+    width: 200px;
+
     vertical-align: top;
+    float: left;
 }
 
 
