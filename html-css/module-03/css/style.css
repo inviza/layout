@@ -18,37 +18,54 @@
 li {
     list-style-type: none; /* увидел на форуме как убрать */
    }
+.first-article{
+    margin:0 0 51px 0;
+}
+.top-title{
+    margin: 0 0 32px 0;
+}
+.top-img{
+    margin: 0 0 27px 0;
+}
+.top-middle-font{
+    margin: 0 0 22px 0;
+}
  .main-font{
     color:  #263555;
     text-transform: uppercase;
-    margin-bottom: 35px;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 25px;
 }
 .middle-font {
-    font-family: Arial;
+    font-family: Arial,sans-serif;
     color:  #263555;
-    margin: 30px 0 25px 0;
     font-size: 14px;
     line-height: 19px;
 }
-.second article {
-    margin: 55px 0 0 0;
+.second-article{
+    padding-bottom:52px ;
+    border-bottom: 1px solid #dfdcdc;
+    margin: 0 0 53px 0;
+}
+.mid-title{
+    margin: 0 0 27px 0;
 }
 .small-font {
-    font-family: Arial;
+    font-family: Arial,sans-serif;
     color:  #263555;
     font-size: 14px;
     line-height: 19px;
     margin: 0 0 16px 0;
 }
+.list-item-topper{
+    margin: 0 0 24px 0;
+}
 .plain-font{
     font-size: 12px;
     line-height: 17px;
-    margin: 0 0 30px 0;
 }
-.third-article {
-    margin: 110px 0 30px 0;
+.bot-title{
+    margin: 0 0 24px 0;
 }
 #gg {
     margin: 0 0 24px 0;
@@ -56,24 +73,17 @@ li {
 #rr {
     margin: 0 0 40px 0;
 }
-.forth-article {
-    text-align: center;
-}
 .last-text1, .last-text2 {
-    width: 200px;
     display: inline-block;
     vertical-align: top;
-    text-align: left;
     line-height: 22px;
+    font-family: Arial,sans-serif;
+    color:  #263555;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
 }
-.last-text2 {
-    width: 200px;
-
-    vertical-align: top;
-    float: left;
+.last-text1{
+    margin-right: 85px;
+    margin-left:24px;
 }
-
-
-
-    
-    
