@@ -17,7 +17,6 @@ li{
 }
 .conteinerbox{
     width: 1024px;
-    height: 100%;
     background-color: #fff;
     margin: auto;
     padding-top:117px;
@@ -27,8 +26,9 @@ li{
 }
 .conteiner-top{
     display: inline-block;
+    width:100%;
+    padding-bottom: 48px;
     border-bottom: 1px solid #dfdcdc;
-    height: 537px;
 }
 .left-top-block,.right-top-block{
     display: inline-block;
@@ -36,7 +36,7 @@ li{
 }
 .left-top-block{
     display: inline-block;
-    width: 641px;
+    width: 635px;
 }
 .title{
     font-family: 'Pathway Gothic One', sans-serif;
@@ -79,12 +79,15 @@ line-height: 19px;
 }
 .for-first-li-list{
     margin-bottom: 32px;
+    padding-left: 39px;
+}
+.for-first-li-list:last-child{
+    margin-bottom: 0;
 }
 .first-li::before{
 	vertical-align: top;
 	line-height: 28px;
     margin-left: -26px;
-    margin-top: -5px;
 	content:counter(counter);
 	display: inline-block;
 	width: 26px;
@@ -92,12 +95,10 @@ line-height: 19px;
 	background-color: #35b1e6;
 	text-align: center;
 	border-radius: 100%;
-
 }
 
 .first-li{
 	counter-increment: counter;
-
 }
 .first-li{
     margin-bottom: 14px;
@@ -108,8 +109,9 @@ line-height: 19px;
     clear: both;
   }
 .conteiner-bottom{
-    margin-top: 29px;
+    margin-top: 58px;
     display: inline-block;
+    width: 100%;
 }
 .left-bottom-block,.right-bottom-block{
     display: inline-block;
@@ -126,7 +128,7 @@ line-height: 19px;
 }
 .right-bottom-block{
     margin-left: 45px;
-    width: 207px;
+    width: 211px;
 }
 #mainfont3{
     margin-bottom: 23px;
@@ -165,7 +167,9 @@ line-height: 19px;
 
 .for-second-li-list{
     margin-bottom: 26px;
-
+}
+.for-second-li-list:last-child{
+    margin-bottom: 0;
 }
 .lol::before{
     content: "\2192";
