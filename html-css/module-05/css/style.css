@@ -41,15 +41,7 @@ text-transform: uppercase;
 	/* margin-left: -4px; */
 }
 
-.nav-link-home{
-    text-transform: uppercase;
-    font-family: OpenSans;
-    color:  #1abc9c;
-    font-size: 14px;
-    padding: 16px 16px;
-    line-height: 11px;
-    font-weight: 700;
-}
+
 .nav-link{
     text-transform: uppercase;
 	padding: 16px 16px;
@@ -58,7 +50,10 @@ text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
     line-height: 11px;
-	display: block;
+    vertical-align: middle;
+}
+.nav-link:hover{
+    color:  #1abc9c;
 }
 .slider{
     background-image: url(../img/slide4.jpg);
