@@ -1,0 +1,195 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+@font-face {
+    font-family: 'dr-sugiyama';
+    src: url(../fonts/dr-sugiyama-v6-latin/dr-sugiyama-v6-latin-regular.woff) format('woff'),
+         url(../fonts/dr-sugiyama-v6-latin/dr-sugiyama-v6-latin-regular.woff2) format('woff2');
+         font-weight: normal;
+         font-style: normal;
+}
+@font-face{
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat-v12-latin/montserrat-v12-latin-regular.woff) format('woff'),
+         url(../fonts/montserrat-v12-latin/montserrat-v12-latin-regular.woff2) format('woff2');
+         font-weight: normal;
+         font-style: normal;
+}
+@font-face{
+    font-family: 'roboto';
+    src: url(../fonts/roboto-slab-v7-latin/roboto-slab-v7-latin-regular.woff) format('woff'),
+         url(../fonts/roboto-slab-v7-latin/roboto-slab-v7-latin-regular.woff2) format('woff2');
+         font-weight: normal;
+         font-style: normal;
+}
+@font-face{
+    font-family: 'acme';
+    src: url(../fonts/acme-v7-latin/acme-v7-latin-regular.woff) format('woff'),
+         url(../fonts/acme-v7-latin/acme-v7-latin-regular.woff2) format('woff2');
+         font-weight: normal;
+         font-style: normal;
+}
+.conteiner{
+	max-width: 940px;
+    padding: 0 5px;
+    width: 100%;
+	margin: auto;
+}
+.flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav{
+    flex-basis: 50%;
+}
+.header{
+    padding-top: 44px;
+}
+.nav{
+    display: flex;
+	justify-content: space-between;
+}
+.logo-txt{
+    font-family: 'dr-sugiyama';
+    font-weight: normal;
+    font-style: normal;
+    color:  #fed136;
+    font-size: 26px;
+}
+.nav-link{
+    font-family: 'montserrat';
+    font-weight: normal;
+    font-style: normal;
+    color:  #222222;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 41px;
+    text-align: center;
+    padding: 10px 10px;
+}
+.nav-link:hover{
+    color:  #fed136;
+}
+.main-top{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #ffffff;
+    text-align: center;
+}
+.title{
+    font-family: 'montserrat';
+    text-transform: uppercase;
+    color:  #222222;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 75px;
+    font-weight: normal;
+    font-style: normal;
+}
+.sub-title{
+    font-family: 'acme';
+    font-weight: normal;
+    font-style: normal;
+    color:  #777777;
+    margin-bottom: 80px;
+}
+.list-item{
+    flex-basis: 25%;
+}
+
+.circle{
+    border-radius: 50%;
+border-style: solid;
+border-width: 3px;
+border-color:  #fed136;
+width: 68px;
+height: 67px;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.advantage{
+    font-family: 'montserrat';
+    font-weight: 700;
+    font-style: normal;
+    color:  #222222;
+    font-size: 18px;
+    line-height: 75px;
+}
+.advantage-txt{
+    font-family: 'roboto';
+    font-weight: normal;
+    font-style: normal;
+    color:  #777777;
+    font-size: 14px;
+}
+.list-item{
+	flex-basis: 25%;
+}
+.main-bot{
+    text-align: center;
+    background-color:  #222222;
+    padding: 110px 0 114px;
+}
+.title-color{
+    color:  #ffffff;
+}
+.self-inform{
+    display: block;
+    margin-bottom: 29px;
+    border-radius: 2px;
+border-style: solid;
+border-width: 1px;
+border-color:  #cccccc;
+background-color:  #ffffff;
+    width: 455px;
+    height: 50px;
+}
+input,textarea{
+    text-transform: uppercase;
+    font-family: 'montserrat';
+}
+placeholder{
+    color:  #bbbbbb;
+    font-family: 'montserrat';
+}
+.right-form,.left-form{
+    display: inline-block;
+}
+.left-form{
+    margin-right: 30px;
+}
+.massage-input{
+    border-style: solid;
+border-width: 1px;
+border-color:  #cccccc;
+/* width: 455px;
+height: 210px; */
+}
+.button-send{
+    border-radius: 3px;
+   
+    background-color:  #fed136;
+    color:  #ffffff;
+    width: 240px;
+    height: 66px;
+}
