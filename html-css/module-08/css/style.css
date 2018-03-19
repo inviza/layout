@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+    
+    text-align: center;
+    background-image: url(../img/lol.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+.dark{
+    background-color:  rgba(0, 0, 2, 0.22);
+}
+.header-top{
+    padding-top: 1.25rem;
+    margin-bottom: 38px;
+}
+.header-bot{
+    padding-bottom: 8.625rem;
+}
+.nav-item{
+    display: inline-block;
+    margin-right: 39px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+  
+    padding: 0.6875rem 1.125rem;
+}
+main{
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.nav{
+    padding-bottom: 7.8125rem;
+}
+.nav-link{
+    font-family: Montserrat;
+    color:  #ffffff;
+    font-size: 0.875rem;
+}
+.nav-item:last-child {
+    margin-right: 0;
+}
+.nav-item:hover{
+    border-color:  #ffffff;
+}
+.brend-txt{
+    font-family: Montserrat;
+    color:  #ffffff;
+    font-size:1.25rem;
+    font-weight: 700;
+}
+h1{
+    font-family: Montserrat;
+    color:  #ffffff;
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    transform: scaleX(1.0014);
+    margin-bottom: 19px;
+}
+h3{
+    font-family: Roboto;
+    color:  #ffffff;
+    font-size: 1.125rem;
+    font-weight: 300;
+    text-align: center;
+    transform: scaleX(1.0014);
+    margin-bottom: 19px;
+}
+.button-press{
+    border-radius: 20px;
+    background-color:  #ff4e50;
+    padding: 0.875rem 3.1875rem;
+    font-family: Montserrat;
+    color:  #ffffff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transform: scaleY(1.0004);
+    border: 0;
+    
+}
+.partner-random{
+    padding-top: 4.3125rem;
+    padding-bottom: 4.3125rem;
+}
+h2{
+    font-family: Montserrat;
+    color:  #333333;
+    font-size: 1.375rem;
+    font-weight: 700;
+    transform: scaleX(1.0013);
+    margin-bottom: 15px;
+}
+h4{
+    font-family: Montserrat;
+    color:  #333333;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transform: scaleX(1.0028);
+    margin-bottom: 16px;
+}
+.about-person{
+    font-family: Roboto;
+    color:  #666666;
+    font-size: 0.875rem;
+    font-weight: 300;
+    transform: scaleX(1.0028);
+}
+.img-li{
+    margin-bottom: 20px;
+}
+.photo-li{
+    margin-bottom: 29px;
+}
+.photo-li:last-child{
+    margin-bottom: 0;
+}
+.photo{
+    margin-bottom: 29px;
+}
+.add-png-li{
+    position: relative;
+}
+.png{
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 4px;
+    border-color:  #ffffff;
+    background-color:  #ff4e50;
+    position: absolute;
+    left: 54%;
+    bottom: 70%;
+    padding: 9px 8px;
+    text-align: center;
+    line-height: 32px;
+}
+.button-see-more{
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #ff4e50;
+    box-sizing: border-box;
+    background-color:  #ffffff;
+    padding:14px 74px;
+    font-family: Montserrat;
+    color:  #ff4e50;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+@media (min-width: 768px){
+    .header-top{
+        padding-top: 3.125rem;
+        margin-bottom: 160px;
+        padding-left: 3.0625rem;
+    }
+    .header-bot{
+        padding-bottom: 14.625rem;
+        max-width: 478px;
+        margin: auto;
+    }
+    .nav{
+        padding-bottom: 0;
+    }
+    .logo{
+        margin-right: 44.2708333%;
+    }
+    .flex{
+        flex-direction: row;
+    }
+    h1{
+        margin-bottom: 40px;
+        font-size: 3.25rem;
+    }
+    h3{
+        margin-bottom: 34px;
+        font-size: 1.5rem;
+    }
+    .button-press{
+        padding: 0.875rem 1.5rem;
+    }
+    .photo{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+    .photo-li{
+        flex-basis: 35%;
+    }
+    .button-see-more{
+        padding: 0.875rem 1.875rem;
+    }
+}
+@media (min-width:1200px){
+    .header-top{
+        padding-left: 15.625rem;
+    }
+    .logo{
+        margin-right: 42.36111111%;
+    }
+    .photo{
+        flex-wrap: none;
+    }
+    .photo-li{
+        flex-basis: 13.472222222%;
+    }
+}
