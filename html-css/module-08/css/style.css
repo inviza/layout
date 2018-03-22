@@ -136,20 +136,34 @@ h4{
 }
 .add-png-li{
     position: absolute;
-    top: 60px;
+    top: 54%;
+    right: 30%;
 }
 .add-img-li{
     position: relative;
+    width: 295px;
+    margin: auto;
 }
-.png{
+.png1,.png2,.png3,.png4{
     border-radius: 100%;
     border-style: solid;
     border-width: 4px;
     border-color:  #ffffff;
-    background-color:  #ff4e50;
     padding: 9px 8px;
     text-align: center;
     line-height: 32px;
+}
+.png1{
+    background-color:  #ff4e50;
+}
+.png2{
+    background-color:  #1cd7ad;
+}
+.png3{
+    background-color:  #ffa507;
+}
+.png4{
+    background-color:  #4e73db;
 }
 .button-see-more{
     border-radius: 20px;
