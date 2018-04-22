@@ -6,7 +6,7 @@ let resort;
 
 let places = prompt('What amout of places you need for this trip?');
 
-if( isNaN(places)||places<0){
+if( isNaN(places)||places<=0){
         alert('Ошибка ввода');
 }
 else{
