@@ -14,7 +14,7 @@ let addLogin = function (logins, login){
             return false;
         }
         }
-    if(heckLoginValidity(login)===true){
+    if(сheckLoginValidity(login)===true){
         let checkIfLoginExists=function(logins, login){
             for(let i=0;i<logins.length;i++){
                 if(logins[i]===login){
@@ -24,7 +24,7 @@ let addLogin = function (logins, login){
                 }
             }
         }
-        if(heckIfLoginExists(logins, login)===true){
+        if(сheckIfLoginExists(logins, login)===true){
             alert('Такой логин уже используется!');
         }
         else{
