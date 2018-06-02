@@ -22,7 +22,7 @@ const CANDY = products.candy;
 
   function Cashier (name, ...products) {
       this.name = name;
-      this.products = [products];
+      this.products = products;
       this.totalPrice = 0;
       this.customerMoney = 0;
       this.changeAmount = 0;
@@ -43,10 +43,10 @@ const CANDY = products.candy;
     //     введена корректная сумма - равная или больше чем totalPrice. Если пользователь нажмет Cancel, 
     //     то функция возвращает null.
     this.customerMoney=prompt(`Total sum of products: ${this.totalPrice}. And now u money!`);
-    if(this.customerMoney < this.totalPrice){
-      this.getCustomerMoney ();
-    } else if(this.customerMoney === null){
+     if(this.customerMoney === null){
       return null;
+    } else if(this.customerMoney < this.totalPrice){
+      this.getCustomerMoney ();
     } else {
       return this.customerMoney;
     }
@@ -70,10 +70,10 @@ const CANDY = products.candy;
     // countChange для подсчета сдачи при успешном вводе пользователя. При успешном обслуживании возвращает 
     // строку `Спасибо за покупку, ваша сдача ${сдача}`, при неудачном 'Очень жаль, что-то пошло не так, приходите еще'.
     // Вызывает метод reset при любом исходе обслуживания
-    this.countTotalPrice ();
-    this.getCustomerMoney ();
-    this.changeAmount ();
-    if(this.getCustomerMoney()===null){
+    this.countTotalPrice (order);
+    let lol= this.getCustomerMoney ();
+    this.countChange ();
+    if(lol===null){
       alert('Очень жаль, что-то пошло не так, приходите еще');
     } else{
       alert(`Спасибо за покупку, ваша сдача ${this.countChange()}`);
@@ -84,6 +84,8 @@ const CANDY = products.candy;
 
 let cashier1 = new Cashier('Mango',BREAD,PORK,CANDY);
 console.log(cashier1); 
-// cashier1.serve(this.products);
-cashier1.countTotalPrice(this.products);
+cashier1.serve(this.products);
+// cashier1.countTotalPrice(this.products);
 // cashier1.getCustomerMoney(); 
+// cashier1.countChange();
+// cashier1.reset();
