@@ -1,0 +1,8 @@
+.preview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
