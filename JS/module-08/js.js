@@ -19,7 +19,6 @@ function select () {
   } else{
     divFullview.firstElementChild.remove();
   }
-  alert('CLICK!');
   console.log('event.target: ', event.target);
   let img = document.createElement('img');
   img.setAttribute('src', event.target.getAttribute('data-fullview'));
