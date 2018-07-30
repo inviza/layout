@@ -10,22 +10,21 @@ li{
     list-style: none;
 }
 .header{
-    background-image: url(img/mon.jpeg);
+    height:50vh;
+    background-image: url(img/mon.jpeg) ;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 700px;
-    margin: 0 auto;
+    background-size:cover;
+    
 
 }
-.logo{
-    background-color: black;
+.header__nav{
+    display: flex;
+    background-color: #000000;
+    align-items: betwen;
 }
 .icon-logo{
     font-size: 2rem;
     color: #ffffff;
-    text-align: center;
-
 }
 .logo-txt{
     font-family: 'Source Sans Pro', sans-serif;
@@ -33,13 +32,12 @@ li{
     color: #ffffff;
     font-size: 2rem;
 
-    text-align: center;
 }
 .gg{
     height: 1000px;
 }
-img {
-    display: block;
-      /* max-width: 100%; */
-      height: auto;
+.fixed-nav {
+    position: fixed;
+    box-shadow:0 5px 0 rgba(0,0,0,0.1);
   }
+  
