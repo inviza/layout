@@ -20,7 +20,7 @@ li{
 .header__nav{
     display: flex;
     background-color: #000000;
-    align-items: betwen;
+    justify-content: space-between;
 }
 .icon-logo{
     font-size: 2rem;
