@@ -1,4 +1,4 @@
-const nav = document.querySelector('.logo');
+const nav = document.querySelector('.header__nav');
 let topOfNav = nav.offsetTop;
 console.log(topOfNav);
 

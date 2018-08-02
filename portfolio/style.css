@@ -14,13 +14,15 @@ li{
     background-image: url(img/mon.jpeg) ;
     background-attachment: fixed;
     background-size:cover;
-    
-
-}
+    }
 .header__nav{
     display: flex;
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.3);
     justify-content: space-between;
+    transition:all 0.5s;
+    position: relative;
+    z-index: 1;
+    top:0;
 }
 .icon-logo{
     font-size: 2rem;
@@ -38,6 +40,31 @@ li{
 }
 .fixed-nav {
     position: fixed;
-    box-shadow:0 5px 0 rgba(0,0,0,0.1);
+    width: 100%;
   }
-  
+  .prev, .next {
+      
+    position: absolute;
+    top: 30%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .fade {
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+}
