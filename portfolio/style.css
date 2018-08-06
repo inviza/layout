@@ -68,3 +68,9 @@ li{
         animation-duration: 1.5s;
       }
 }
+
+.all-loop{
+    background-color: #000000;
+    text-align: center;
+    z-index: 10;
+}

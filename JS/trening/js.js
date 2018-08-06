@@ -6,10 +6,16 @@ Vue.component('todo-item', {
 var app7 = new Vue({
   el: '#app-7',
   data: {
-    groceryList: [
-      { id: 0, text: 'Овощи' },
-      { id: 1, text: 'Сыр' },
-      { id: 2, text: 'Что там ещё люди едят?' }
-    ]
+    loginType: 'username',
+  },
+  methods:{
+    doSomething: function () {
+      if(loginType === 'username'){
+        this.loginType = "email";
+      }
+      else {
+        this.loginType = 'username'
+      }
+    }
   }
 })

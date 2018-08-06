@@ -97,27 +97,29 @@ const laptops = [
   }
 const btnSubmit = document.querySelector('#submit');
 const btnReset = document.querySelector('#reset');
-const checkbox = document.querySelectorAll('#gg');
+const checkbox = document.querySelectorAll('input');
 // console.log(checkbox);  
 
-
-
-
-const onClick = () => {
-    if(checkbox.checked){
-      container.innerHTML = markup;
-       
-    }
-    console.log(checkbox.checked); 
-}
-
-  const source = document.querySelector('#menu').innerHTML.trim();
+const source = document.querySelector('#menu').innerHTML.trim();
 
 const template = Handlebars.compile(source);
 
 const markup = laptops.reduce((acc, item)=> acc + template(item), '');
 const container = document.querySelector('.content-placeholder');
 // container.innerHTML = markup;
+
+
+const onClick = () => {
+  event.preventDefault();
+    if(checkbox.checked){
+      container.innerHTML = markup;
+       
+    }
+
+    console.log(checkbox.checked); 
+}
+
+
 
 
 btnSubmit.addEventListener('click', onClick)

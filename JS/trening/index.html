@@ -8,21 +8,15 @@
   <title>Document</title>
 </head>
 <body>
-    <div id="app-7">
-        <ul>
-          <!--
-            Теперь мы можем передать каждому компоненту todo-item объект
-            с информацией о задаче, который будет динамически меняться.
-            Мы также определяем для каждого компонента "key",
-            значение которого будет объяснено далее в руководстве.
-          -->
-          <todo-item
-            v-for="item in groceryList"
-            v-bind:todo="item"
-            v-bind:key="item.id">
-          </todo-item>
-        </ul>
-      </div>
+  <template id="app-7" v-if="loginType === 'username'">
+    <label>Имя пользователя</label>
+    <input placeholder="Введите имя пользователя" key="username-input">
+  </template>
+  <template v-else>
+    <label>Email</label>
+    <input placeholder="Введите адрес email" key="email-input">
+  </template>
+  <button v-on:click="doSomething ()"></button>
   <script src="js.js"></script>
 </body>
 </html>

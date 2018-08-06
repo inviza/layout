@@ -15,3 +15,18 @@ function fixNav() {
 }
 
 window.addEventListener('scroll', fixNav);
+
+
+
+
+const click = document.querySelector(".click")
+
+function op () {
+  if(click.style.display = "block" ){
+    click.style.display = none;
+  }
+}
+
+const iconlogoup = document.querySelector(".icon-logo-up");
+
+iconlogoup.addEventListener('click', op)
