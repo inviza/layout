@@ -111,12 +111,12 @@ const container = document.querySelector('.content-placeholder');
 
 const onClick = () => {
   event.preventDefault();
-    if(checkbox.checked){
-      container.innerHTML = markup;
-       
-    }
+  const source = document.querySelector('#menu').innerHTML.trim();
 
-    console.log(checkbox.checked); 
+  const template = Handlebars.compile(source);
+  let trueCheck = checkbox.filter(elem => elem.checked === true) ;
+  const markup = laptops.reduce((acc, item)=> acc + template(item), '');
+  container.innerHTML = markup;
 }
 
 
