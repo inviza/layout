@@ -91,63 +91,63 @@ const laptops = [
   },
 ];
 
-  function filtermass (arr) {
-    const source = document.querySelector('#menu').innerHTML.trim();
-    const template = Handlebars.compile(source);
-    const markup = arr.reduce((acc, item) => acc + template(item), '');
-    const container = document.querySelector('.content-placeholder');
-    container.innerHTML = markup;
+
+
+function createMarkup(laptops) {
+  let main = document.querySelector('.gallery-content');
+  let source = document.querySelector("#entry-template").innerHTML.trim();
+  let template = Handlebars.compile(source);
+  const markup = laptops.reduce((acc, item) => acc + template(item), '');
+  main.innerHTML = markup;
+}
+
+function createFilter() {
+  const filterArray = { size: [], color: [], release_date: [] };
+  let checkbox = document.querySelectorAll('input[type=checkbox]');
+  let checkboxArray = Array.from(checkbox).filter(item => item.checked);
+  for (let key in filterArray) {
+    for (let item of checkboxArray) {
+      if (key === item.name)
+        filterArray[key].push(item.value);
+    }
   }
-  
-  filtermass(laptops);
-  
+  return filterArray;
+}
 
-  const SubmitBtn = document.querySelector("#submit");
-  SubmitBtn.addEventListener('click', function (event){
-    event.preventDefault();
-      const filter = {};
-      
-      function summcheck (attribute) {
-          const element = document.querySelectorAll(`[name=${attribute}]`);
-          const mass = Array.from(element);
-          const masscheck = [];
-          for (let item of mass) {
-              if (item.checked) {
-                masscheck.push(item.value);
-              }
-          }
-          return masscheck;
-      }
-      filter.size = summcheck('size');
-      filter.color = summcheck('color');
-      filter.release_date = summcheck('release_date');
-    
-      const result = [];
-      for (let colProp of filter.color) {
-        let resultArr = laptops.filter((el) => el.color == colProp);
-        result.push(resultArr)
-      }
-      for (let sizeProp of filter.size) {
-        let resultArrSize = laptops.filter((el) => el.size == sizeProp);
-        result.push(resultArrSize);
-      }
-      for (let dateProp of filter.release_date) {
-        let resultArrDate = laptops.filter((el) => el.release_date == dateProp);
-        result.push(resultArrDate);
-      }
-      console.log(result);
-      
-      const reduseArr = result.reduce((acc, item) => acc.concat(item));
-      const uniqueArr = Array.from(new Set(reduseArr));
-      filtermass(uniqueArr);
-  })
+function applyFilter(filter, laptop) {
+  const sizeFilter = filter.size;
+  const colorFilter = filter.color;
+  const releaseDateFilter = filter.release_date;
 
-  const resetBtn = document.querySelector("#reset");
-  resetBtn.addEventListener('click', function (e){
-    e.preventDefault();
-    filtermass(laptops);
-  })
+  if (sizeFilter.length !== 0 && !sizeFilter.some(element => +element === laptop.size))
+    return false;
 
+  if (colorFilter.length !== 0 && !colorFilter.some(element => element === laptop.color))
+    return false;
 
+  if (releaseDateFilter.length !== 0 && !releaseDateFilter.some(element => +element === laptop.release_date))
+    return false;
+
+  return true;
+}
+
+function onFilter(event) {
+  event.preventDefault()
+  const filter = createFilter();
+  const filteredEntities = laptops.filter(laptop => {
+    if (applyFilter(filter, laptop)) return laptop;
+  });
+  createMarkup(filteredEntities);
+}
+
+function onClear() {
+  createMarkup(laptops);
+}
+
+createMarkup(laptops);
+let filterButton = document.querySelector('button[type=submit]');
+let clearButton = document.querySelector('button[type=reset]');
+filterButton.addEventListener('click', onFilter);
+clearButton.addEventListener('click', onClear);
 
 
