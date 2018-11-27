@@ -1,0 +1,29 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+   }
+/* .wrapper{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}    */
+
+.fa-info{
+    line-height: 1.5;
+    color: #212529;
+    position: relative;
+    cursor:pointer;
+}
+.fa-info:hover::after {
+    content: attr(data-title); 
+    position: absolute; 
+    left: -1500%; top: 30%; 
+    z-index: 1; 
+    background: rgba(255,255,230,0.9); 
+    font-family: Arial, sans-serif; 
+    font-size: 11px; 
+    padding: 5px 5px; 
+    border: 1px solid #333; 
+    border-radius: 10px;
+    width: 150px;
+   }
