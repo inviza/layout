@@ -1,5 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
-/* Press+Start+2P|Yeseva+One */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Press+Start+2P|Yeseva+One');
+
 /* *{
     padding: 0;
     margin: 0;
@@ -116,19 +116,18 @@ li{
     
 }
 
-#scrollFirst{
+/* #scrollFirst{
     position: fixed;
     z-index: 0;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url(../img/1.jpg);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
     animation: handAppear 3s ease;
-}
+} */
 @keyframes  handAppear {
     0% { bottom: -262px; }
     100% {  bottom: 0px; }
@@ -181,6 +180,22 @@ li{
     0%{ opacity: 0 }
     75%{ opacity: 0; bottom: 100px }
     100%{ opacity: 1%; bottom: 200px}
+}
+.autor_txt{
+    opacity: 0.4;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    position: fixed;
+    bottom: 35px;
+    left: 35px;
+    z-index: 10;
+    animation: autor_txt 3s ease;
+}
+@keyframes autor_txt {
+    0%{ opacity: 0 }
+    75%{ opacity: 0;}
+    100%{ opacity: 0.4; }
 }
 .icon-blind1{
     animation: blimingArrow1 2s ease infinite;
