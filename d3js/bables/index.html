@@ -1,81 +1,83 @@
-
-<!DOCTYPE html>
-<meta charset="utf-8">
-<body>
-<script src="./d3.v3.min.js"></script>
-<script>
-
-var width = 960,
-    height = 700;
-
-var nodes = d3.range(100).map(function() { return {radius: Math.random() * 12 + 2}; }),
-    root = nodes[0];
-
-root.radius = 0;
-root.fixed = true;
-
-var force = d3.layout.force()
-    .gravity(0.05)
-    .charge(function(d, i) { return i ? 0 : -1000; })
-    .nodes(nodes)
-    .size([width, height]);
-
-force.start();
-
-var canvas = d3.select("body").append("canvas")
-    .attr("width", width)
-    .attr("height", height);
-
-var context = canvas.node().getContext("2d");
-
-force.on("tick", function(e) {
-  var q = d3.geom.quadtree(nodes),
-      i,
-      d,
-      n = nodes.length;
-
-  for (i = 1; i < n; ++i) q.visit(collide(nodes[i]));
-
-  context.clearRect(0, 0, width, height);
-  context.fillStyle = "#712027";
-  context.beginPath();
-  for (i = 1; i < n; ++i) {
-    d = nodes[i];
-    context.moveTo(d.x, d.y);
-    context.arc(d.x, d.y, d.radius, 0, 2 * Math.PI);
+<html><head><meta charset="utf-8">
+  <style>
+  
+  .link {
+    stroke: #000;
+    stroke-width: 1.5px;
   }
-  context.fill();
-});
-
-canvas.on("mousemove", function() {
-  var p1 = d3.mouse(this);
-  root.px = p1[0];
-  root.py = p1[1];
-  force.resume();
-});
-
-function collide(node) {
-  var r = node.radius + 16,
-      nx1 = node.x - r,
-      nx2 = node.x + r,
-      ny1 = node.y - r,
-      ny2 = node.y + r;
-  return function(quad, x1, y1, x2, y2) {
-    if (quad.point && (quad.point !== node)) {
-      var x = node.x - quad.point.x,
-          y = node.y - quad.point.y,
-          l = Math.sqrt(x * x + y * y),
-          r = node.radius + quad.point.radius;
-      if (l < r) {
-        l = (l - r) / l * .5;
-        node.x -= x *= l;
-        node.y -= y *= l;
-        quad.point.x += x;
-        quad.point.y += y;
-      }
-    }
-    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-  };
-}
-
-</script>
+  
+  .node {
+    cursor: move;
+    fill: #ccc;
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  
+  .node.fixed {
+    fill: #f00;
+  }
+  
+  </style>
+  </head><body>
+  <script src="./d3.v3.min.js"></script>
+  <script>
+  
+  var width = 960,
+      height = 500;
+  
+  var force = d3.layout.force()
+      .size([width, height])
+      .charge(-400)
+      .linkDistance(40)
+      .on("tick", tick);
+  
+  var drag = force.drag()
+      .on("dragstart", dragstart);
+  
+  var svg = d3.select("body").append("svg")
+      .attr("width", width)
+      .attr("height", height);
+  
+  var link = svg.selectAll(".link"),
+      node = svg.selectAll(".node");
+  
+  d3.json("graph.json", function(error, graph) {
+    if (error) throw error;
+  
+    force
+        .nodes(graph.nodes)
+        .links(graph.links)
+        .start();
+  
+    link = link.data(graph.links)
+      .enter().append("line")
+        .attr("class", "link");
+  
+    node = node.data(graph.nodes)
+      .enter().append("circle")
+        .attr("class", "node")
+        .attr("r", 12)
+        .on("dblclick", dblclick)
+        .call(drag);
+  });
+  
+  function tick() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+  
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+  
+  function dblclick(d) {
+    d3.select(this).classed("fixed", d.fixed = false);
+  }
+  
+  function dragstart(d) {
+    d3.select(this).classed("fixed", d.fixed = true);
+  }
+  
+  </script><svg width="960" height="500"><line class="link" x1="470.51776586389866" y1="410.3988024565626" x2="494.51640402408896" y2="364.20531007677516"></line><line class="link" x1="494.51640402408896" y1="364.20531007677516" x2="442.88543381188003" y2="365.5441569680725"></line><line class="link" x1="442.88543381188003" y1="365.5441569680725" x2="470.51776586389866" y2="410.3988024565626"></line><line class="link" x1="494.51640402408896" y1="364.20531007677516" x2="467.4807134495464" y2="314.0976452825847"></line><line class="link" x1="467.4807134495464" y1="314.0976452825847" x2="442.88543381188003" y2="365.5441569680725"></line><line class="link" x1="467.4807134495464" y1="314.0976452825847" x2="476.53643256182323" y2="247.598741657055"></line><line class="link" x1="476.53643256182323" y1="247.598741657055" x2="424.1765981780455" y2="207.69384353733284"></line><line class="link" x1="424.1765981780455" y1="207.69384353733284" x2="400.8613757526308" y2="156.26522974555397"></line><line class="link" x1="424.1765981780455" y1="207.69384353733284" x2="368.5923026794203" y2="197.68648161723428"></line><line class="link" x1="400.8613757526308" y1="156.26522974555397" x2="368.5923026794203" y2="197.68648161723428"></line><line class="link" x1="400.8613757526308" y1="156.26522974555397" x2="349.26983494933086" y2="149.2478424644529"></line><line class="link" x1="368.5923026794203" y1="197.68648161723428" x2="349.26983494933086" y2="149.2478424644529"></line><line class="link" x1="538.4268634245218" y1="221.5210756101361" x2="476.53643256182323" y2="247.598741657055"></line><line class="link" x1="538.4268634245218" y1="221.5210756101361" x2="581.3990622662993" y2="184.12440158821275"></line><line class="link" x1="538.4268634245218" y1="221.5210756101361" x2="593.902441576257" y2="234.23039372956643"></line><line class="link" x1="593.902441576257" y1="234.23039372956643" x2="581.3990622662993" y2="184.12440158821275"></line><line class="link" x1="581.3990622662993" y1="184.12440158821275" x2="631.9778376799366" y2="198.68343485820543"></line><line class="link" x1="631.9778376799366" y1="198.68343485820543" x2="593.902441576257" y2="234.23039372956643"></line><circle class="node" r="12" cx="470.51776586389866" cy="410.3988024565626"></circle><circle class="node" r="12" cx="494.51640402408896" cy="364.20531007677516"></circle><circle class="node" r="12" cx="442.88543381188003" cy="365.5441569680725"></circle><circle class="node" r="12" cx="467.4807134495464" cy="314.0976452825847"></circle><circle class="node" r="12" cx="476.53643256182323" cy="247.598741657055"></circle><circle class="node" r="12" cx="424.1765981780455" cy="207.69384353733284"></circle><circle class="node" r="12" cx="400.8613757526308" cy="156.26522974555397"></circle><circle class="node" r="12" cx="368.5923026794203" cy="197.68648161723428"></circle><circle class="node" r="12" cx="349.26983494933086" cy="149.2478424644529"></circle><circle class="node" r="12" cx="538.4268634245218" cy="221.5210756101361"></circle><circle class="node" r="12" cx="593.902441576257" cy="234.23039372956643"></circle><circle class="node" r="12" cx="581.3990622662993" cy="184.12440158821275"></circle><circle class="node" r="12" cx="631.9778376799366" cy="198.68343485820543"></circle></svg>
+  </body></html>
